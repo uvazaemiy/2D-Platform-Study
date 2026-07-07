@@ -8,6 +8,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] private CameraFollow cameraFollow;
+    [Space]
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private float moveForce = 5f;
     [SerializeField] private float jumpForce = 12f;
@@ -43,11 +45,21 @@ public class PlayerController : MonoBehaviour
         if (horizontal > 0)
         {
             sr.flipX = true;
+            
+            cameraFollow.offset = cameraFollow.offset.x < 0 ? 
+                new Vector3(cameraFollow.offset.x * -1, cameraFollow.offset.y, cameraFollow.offset.z) 
+                : cameraFollow.offset;
+            
             OnMove?.Invoke();
         }
         else if (horizontal < 0)
         {
             sr.flipX = false;
+            
+            cameraFollow.offset = cameraFollow.offset.x > 0 ? 
+                new Vector3(cameraFollow.offset.x * -1, cameraFollow.offset.y, cameraFollow.offset.z) 
+                : cameraFollow.offset;
+            
             OnMove?.Invoke();
         }
         else
