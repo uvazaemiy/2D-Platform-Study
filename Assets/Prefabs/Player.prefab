@@ -40,6 +40,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4066335970663914150}
+  - component: {fileID: 2919984424269649921}
+  - component: {fileID: 1351755566640219137}
+  - component: {fileID: 109380811143408546}
   - component: {fileID: 8670825856598815764}
   - component: {fileID: 3411071043837228240}
   - component: {fileID: 5087337876843739613}
@@ -47,7 +50,7 @@ GameObject:
   - component: {fileID: 8802079182414522277}
   - component: {fileID: 7014437331139703023}
   - component: {fileID: 7896619358953369568}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70,6 +73,47 @@ Transform:
   - {fileID: 5213659421650442753}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2919984424269649921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7032572124830290601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2c679efb55861e4eb8ef6f4eee60c62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerAttackInput
+  damage: 1
+--- !u!114 &1351755566640219137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7032572124830290601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4094910cb06216146b7039088463db16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AttackTargetFinder
+  radius: 2
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 128
+--- !u!114 &109380811143408546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7032572124830290601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71b8285b219e65a41ac48e0e4bc0a2dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AttackInteractable
 --- !u!114 &8670825856598815764
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -82,6 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cbfd04db9c6e8144ab05a245178d117, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
+  cameraFollow: {fileID: 0}
   moveSpeed: 10
   moveForce: 15
   jumpForce: 7

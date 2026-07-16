@@ -9,7 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8410607346350942491}
+  - component: {fileID: 694322622825069085}
+  - component: {fileID: 5061220013164057214}
+  - component: {fileID: 5584137730905500404}
   - component: {fileID: 5584085110822541802}
+  - component: {fileID: 8743928034590365969}
   - component: {fileID: 841670571286000477}
   - component: {fileID: 831987370847378456}
   - component: {fileID: 460282561522548572}
@@ -34,11 +38,53 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.027, y: 1.664, z: 0}
-  m_LocalScale: {x: 2.978, y: 2.978, z: 2.978}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &694322622825069085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 13312908156985955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdc7f4b8f0893794487dcfbd2fd067dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyAutoAttack
+  damage: 1
+  attackCooldown: 1
+--- !u!114 &5061220013164057214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 13312908156985955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4094910cb06216146b7039088463db16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AttackTargetFinder
+  radius: 1.5
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 8
+--- !u!114 &5584137730905500404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 13312908156985955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71b8285b219e65a41ac48e0e4bc0a2dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AttackInteractable
 --- !u!114 &5584085110822541802
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52,7 +98,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BatAI
   player: {fileID: 0}
-  stopDistance: 2
+  stopDistance: 0.4
+--- !u!114 &8743928034590365969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 13312908156985955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 157ea4dff7daa0a4299a0b9b901ba100, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Health
+  maxHealth: 5
 --- !u!114 &841670571286000477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80,7 +139,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: AstarPathfindingProject::Pathfinding.AIPath
   version: 5
-  radius: 0.5
+  radius: 0.4
   height: 2
   canMove: 1
   maxSpeed: 3
@@ -91,7 +150,7 @@ MonoBehaviour:
   centerOffsetCompatibility: NaN
   repathRateCompatibility: NaN
   canSearchCompability: 0
-  orientation: 0
+  orientation: 1
   enableRotation: 0
   autoRepath:
     mode: 2
@@ -104,7 +163,7 @@ MonoBehaviour:
   rotationSpeed: 360
   slowdownDistance: 0.6
   pickNextWaypointDist: 2
-  endReachedDistance: 0.2
+  endReachedDistance: 5
   alwaysDrawGizmos: 0
   slowWhenNotFacingTarget: 1
   whenCloseToDestination: 0
@@ -290,4 +349,4 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
