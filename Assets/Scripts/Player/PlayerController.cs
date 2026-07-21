@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer sr;
     public Rigidbody2D rb;
     private Animator anim;
+    private Health health;
 
     private float groundCheckRadius = 0.2f;
     
@@ -34,10 +35,13 @@ public class PlayerController : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        health = GetComponent<Health>();
     }
 
     private void Update()
     {
+        if (!health.IsAlive()) return;
+        
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
 
         float horizontal = Input.GetAxis("Horizontal");

@@ -7,15 +7,21 @@ public class EnemyAutoAttack : MonoBehaviour
 
     private float timer;
     private AttackTargetFinder finder;
+    private Animator _animator;
+    private Health  _health;
 
     private void Start()
     {
         finder = GetComponent<AttackTargetFinder>();
+        _animator = GetComponent<Animator>();
         timer = attackCooldown;
+        _health =  GetComponent<Health>();
     }
 
     private void Update()
     {
+        if (!_health.IsAlive()) return;
+        
         timer -= Time.deltaTime;
 
         if (timer <= 0)
@@ -32,6 +38,7 @@ public class EnemyAutoAttack : MonoBehaviour
         if (target != null)
         {
             target.Interact(damage);
+            _animator.SetTrigger("Attack");
         }
     }
 }

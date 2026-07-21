@@ -50,6 +50,7 @@ GameObject:
   - component: {fileID: 8802079182414522277}
   - component: {fileID: 7014437331139703023}
   - component: {fileID: 7896619358953369568}
+  - component: {fileID: 2449817342345687195}
   m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
@@ -148,6 +149,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36ed3e4ba351e59419f91ae41e94af00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAnimation
+  capsuleCollider: {fileID: 7896619358953369568}
+  boxCollider: {fileID: 2449817342345687195}
 --- !u!114 &5087337876843739613
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -161,6 +164,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Health
   maxHealth: 5
+  _currentHealth: 0
 --- !u!95 &9170115838879808353
 Animator:
   serializedVersion: 7
@@ -306,3 +310,49 @@ CapsuleCollider2D:
   m_Offset: {x: -2.2449994e-16, y: 0.0033721074}
   m_Size: {x: 0.28000006, y: 0.38325575}
   m_Direction: 0
+--- !u!61 &2449817342345687195
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7032572124830290601}
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -0.00067489594, y: -0.00032633543}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.28, y: 0.39}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.40282583, y: 0.13222212}
+  m_EdgeRadius: 0

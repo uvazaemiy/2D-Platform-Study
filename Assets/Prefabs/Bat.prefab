@@ -99,6 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BatAI
   player: {fileID: 0}
   stopDistance: 0.4
+  destroyDelay: 2
 --- !u!114 &8743928034590365969
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112,6 +113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Health
   maxHealth: 5
+  _currentHealth: 0
 --- !u!114 &841670571286000477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -307,7 +309,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0

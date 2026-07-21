@@ -4,11 +4,12 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     [SerializeField] private int maxHealth = 5;
+    [SerializeField] private int _currentHealth;
 
     public Action OnDamaged;
+    public Action OnKilled;
     
 
-    private int _currentHealth;
 
     private void Start()
     {
@@ -22,7 +23,7 @@ public class Health : MonoBehaviour
         if (!IsAlive())
         {
             _currentHealth = 0;
-            Debug.Log("Dead");
+            OnKilled?.Invoke();
         }
         
         Debug.Log("Health: " + _currentHealth);
