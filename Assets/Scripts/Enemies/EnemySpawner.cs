@@ -31,7 +31,7 @@ public class EnemySpawner : MonoBehaviour
                 
                 GameObject newEnemy = Instantiate(enemyPrefab, spawnPoints[spawnPointIndex].position, Quaternion.identity);
                 newEnemy.GetComponent<BatAI>().player = player;
-                
+                newEnemy.GetComponent<BatAI>().EnemySpawner = this;
                 newEnemy.GetComponent<AIDestinationSetter>().target = player;
                 
                 allEnemies.Add(newEnemy);
@@ -39,5 +39,11 @@ public class EnemySpawner : MonoBehaviour
             
             yield return new WaitForSeconds(spawnDelay);
         }
+    }
+
+    public void RemoveEnemy(GameObject enemy, float destroyDelay)
+    {
+        allEnemies.Remove(enemy);
+        Destroy(enemy, destroyDelay);
     }
 }

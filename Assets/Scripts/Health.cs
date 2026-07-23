@@ -26,8 +26,6 @@ public class Health : MonoBehaviour
             OnKilled?.Invoke();
         }
         
-        Debug.Log("Health: " + _currentHealth);
-        
         OnDamaged?.Invoke();
     }
 

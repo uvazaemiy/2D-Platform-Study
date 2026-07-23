@@ -1,11 +1,6 @@
 using System;
 using UnityEngine;
 
-
-
-
-
-
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private CameraFollow cameraFollow;
@@ -25,10 +20,6 @@ public class PlayerController : MonoBehaviour
     private Health health;
 
     private float groundCheckRadius = 0.2f;
-    
-    
-    
-    
     
     private void Start()
     {

@@ -2,9 +2,7 @@ using UnityEngine;
 
 public class PlayerAnimation : MonoBehaviour
 {
-    [SerializeField] private CapsuleCollider2D capsuleCollider;
-    [SerializeField] private BoxCollider2D boxCollider;
-    
+    private ChangeCollidersOnDie _changeCollidersOnDie;   
     private Animator _animator;
     private Health _health;
     private PlayerController _playerController; 
@@ -14,6 +12,7 @@ public class PlayerAnimation : MonoBehaviour
         _animator = GetComponent<Animator>();
         _health = GetComponent<Health>();
         _playerController = GetComponent<PlayerController>();
+        _changeCollidersOnDie = GetComponent<ChangeCollidersOnDie>();
     }
 
     private void OnEnable()
@@ -53,7 +52,6 @@ public class PlayerAnimation : MonoBehaviour
     {
         _animator.SetTrigger("Die");
 
-        capsuleCollider.enabled = false;
-        boxCollider.enabled = true;
+        _changeCollidersOnDie.ChangeColliders();
     }
 }

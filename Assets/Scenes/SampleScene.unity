@@ -28331,22 +28331,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2449817342345687195, guid: d58f74316c73e84499a3064ca8da9272, type: 3}
-      propertyPath: m_Size.y
-      value: 0.101496294
-      objectReference: {fileID: 0}
-    - target: {fileID: 2449817342345687195, guid: d58f74316c73e84499a3064ca8da9272, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2449817342345687195, guid: d58f74316c73e84499a3064ca8da9272, type: 3}
-      propertyPath: m_Offset.x
-      value: -0.0006749034
-      objectReference: {fileID: 0}
-    - target: {fileID: 2449817342345687195, guid: d58f74316c73e84499a3064ca8da9272, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.0150365755
-      objectReference: {fileID: 0}
     - target: {fileID: 2635757109623382242, guid: d58f74316c73e84499a3064ca8da9272, type: 3}
       propertyPath: m_Layer
       value: 3
@@ -28409,8 +28393,8 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1803130470}
-  - {fileID: 1936029834}
   - {fileID: 7575493351850369214}
+  - {fileID: 1936029834}
   - {fileID: 1712293283}
   - {fileID: 905556846}
   - {fileID: 2059008866}

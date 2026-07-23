@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 8670825856598815764}
   - component: {fileID: 3411071043837228240}
   - component: {fileID: 5087337876843739613}
+  - component: {fileID: 7163380330086164118}
   - component: {fileID: 9170115838879808353}
   - component: {fileID: 8802079182414522277}
   - component: {fileID: 7014437331139703023}
@@ -149,8 +150,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36ed3e4ba351e59419f91ae41e94af00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAnimation
-  capsuleCollider: {fileID: 7896619358953369568}
-  boxCollider: {fileID: 2449817342345687195}
 --- !u!114 &5087337876843739613
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,6 +164,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Health
   maxHealth: 5
   _currentHealth: 0
+--- !u!114 &7163380330086164118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7032572124830290601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 600ff5812a9738d4cbb27c288728cd8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ChangeCollidersOnDie
+  _collider1: {fileID: 7896619358953369568}
+  _collider2: {fileID: 2449817342345687195}
 --- !u!95 &9170115838879808353
 Animator:
   serializedVersion: 7
@@ -344,7 +357,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.00067489594, y: -0.00032633543}
+  m_Offset: {x: -0.0006749034, y: 0.0150365755}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -354,5 +367,5 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.40282583, y: 0.13222212}
+  m_Size: {x: 0.40282583, y: 0.101496294}
   m_EdgeRadius: 0

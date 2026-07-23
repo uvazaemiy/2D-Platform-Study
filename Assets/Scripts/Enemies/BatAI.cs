@@ -3,6 +3,7 @@ using Pathfinding;
 
 public class BatAI : MonoBehaviour
 {
+    public EnemySpawner EnemySpawner;
     public Transform player;
     public float stopDistance = 1.5f;
     [SerializeField] private float destroyDelay = 2;
@@ -13,6 +14,7 @@ public class BatAI : MonoBehaviour
     private Animator _animator;
     private Health _health;
     private Rigidbody2D _rb;
+    private ChangeCollidersOnDie _changeCollidersOnDie;
 
     private void Awake()
     {
@@ -21,6 +23,7 @@ public class BatAI : MonoBehaviour
         _health = GetComponent<Health>();
         _animator = GetComponent<Animator>();
         _rb =  GetComponent<Rigidbody2D>();
+        _changeCollidersOnDie = GetComponent<ChangeCollidersOnDie>();
         
         if (_health != null)
         {
@@ -66,6 +69,8 @@ public class BatAI : MonoBehaviour
         
         _animator.SetBool("Die", true);
         
-        Destroy(gameObject, destroyDelay);
+        _changeCollidersOnDie.ChangeColliders();
+        
+        EnemySpawner.RemoveEnemy(gameObject, destroyDelay);
     }
 }
