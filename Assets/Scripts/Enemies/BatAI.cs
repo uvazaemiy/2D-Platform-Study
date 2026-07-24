@@ -7,6 +7,7 @@ public class BatAI : MonoBehaviour
     public Transform player;
     public float stopDistance = 1.5f;
     [SerializeField] private float destroyDelay = 2;
+    [SerializeField] private GameObject coinPrefab;
 
     private AIPath aiPath;
     private SpriteRenderer spriteRenderer;
@@ -69,8 +70,10 @@ public class BatAI : MonoBehaviour
         
         _animator.SetBool("Die", true);
         
-        _changeCollidersOnDie.ChangeColliders();
+        StartCoroutine(_changeCollidersOnDie.ChangeColliders());
         
         EnemySpawner.RemoveEnemy(gameObject, destroyDelay);
+        
+        Instantiate(coinPrefab, transform.position, Quaternion.identity);
     }
 }

@@ -54,7 +54,7 @@ GameObject:
   - component: {fileID: 2449817342345687195}
   m_Layer: 3
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -162,7 +162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 157ea4dff7daa0a4299a0b9b901ba100, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Health
-  maxHealth: 5
+  maxHealth: 25
   _currentHealth: 0
 --- !u!114 &7163380330086164118
 MonoBehaviour:
@@ -176,6 +176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 600ff5812a9738d4cbb27c288728cd8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ChangeCollidersOnDie
+  changeDelay: 0.07
   _collider1: {fileID: 7896619358953369568}
   _collider2: {fileID: 2449817342345687195}
 --- !u!95 &9170115838879808353

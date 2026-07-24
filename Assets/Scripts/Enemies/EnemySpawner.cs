@@ -30,6 +30,7 @@ public class EnemySpawner : MonoBehaviour
                 int spawnPointIndex = Random.Range(0, spawnPoints.Length);
                 
                 GameObject newEnemy = Instantiate(enemyPrefab, spawnPoints[spawnPointIndex].position, Quaternion.identity);
+                
                 newEnemy.GetComponent<BatAI>().player = player;
                 newEnemy.GetComponent<BatAI>().EnemySpawner = this;
                 newEnemy.GetComponent<AIDestinationSetter>().target = player;

@@ -52,6 +52,6 @@ public class PlayerAnimation : MonoBehaviour
     {
         _animator.SetTrigger("Die");
 
-        _changeCollidersOnDie.ChangeColliders();
+        StartCoroutine(_changeCollidersOnDie.ChangeColliders());
     }
 }

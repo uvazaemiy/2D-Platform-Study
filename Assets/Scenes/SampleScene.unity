@@ -464,74 +464,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 580506557}
   m_CullTransparentMesh: 1
---- !u!1 &587797587
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 587797589}
-  - component: {fileID: 587797588}
-  m_Layer: 0
-  m_Name: Circle
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!58 &587797588
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 587797587}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Radius: 0.5
---- !u!4 &587797589
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 587797587}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.167, y: 1.118, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &668468791
 GameObject:
   m_ObjectHideFlags: 0
@@ -27117,7 +27049,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: AstarPathfindingProject::AstarPath
   version: 1
   data:
-    dataString: UEsDBBQAAAgIAAAQIewbAn7XawIAACIFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF1VE1z2jAQ/SuMzk3GdmIgvbWEkB4SmNBOLr4Ia401yJJHH3wkw3/vSraxQ6cnxNt9q31vV/4kXJoacqv0QnP2ohiQ7yPiz+TbqA8+w5FulVzzD+hy3jmzpU+iIeeNWq4Qjz3NqAqs5vkPuRU+OULQSV4oXc3ZFmbKWINwQYUBDGllPVsi9DkiR/y5efCUE56SiT994OkhGp3xmIO0oPvU+/HtNJkkD5OkZUS3aTJN08k4nbbMhuhkLmhVA/Mqen4SdVfFdyFPosA2xYvJlRDctN0Re6qD+jd68toZp6g0tONzS+Db0vqiQ+KyKAzY1gZNT49co2FNRfJTNS5W1OyapvZUOH/HOA3tNDVf/gnfxCFcaFU9d9fGQYsteb7DBnNq7MDlIfz4tW8nD1Ts6EbAewnyVS20cpJh0Grnqc5A8tj/vSiblZDverxp9Qp0de9153Q3Uq/hHMQfZ4JXmzC9+wZYCxWsDpsAGofyCxsOe2LaEoj6Lv4Y+E23w4VqA09cG4uhVqX07W2U0z6VzINnXo2zM6Ul6GGFGiQV9rTCOvZ6hFex/7OeqH877e1trHsSV5QA9/lRdBVaqcNlWqZUhxcw5dJZwSX0VvvAKxo1U1I2GzaU1NHWThc0H9C2jrOvu0XSGIooYkk8ZpvJlLKbO7qZ0CSK082YFdO7lITl4xJ1UrFqGm3twbHJvrjERes+KaOFpnXYdqbpYcE/KmX6TC4Ltc41gFw2FS6Ng8ZL8EWyOeNo0Bqs5TIMnHxmRKh8Byy7FMqC0vnRapr1VTJS872yHsnILHxDMuLhyzKvNOw5HPzlXbEzOf8FUEsDBBQAAAgIAAAQIexCRRbzbQAAAHgAAAAJACQAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0Bq1YqSy0qzszPU7JSMNEz0jM011FQSi9KLMgoBooYgjilmSkgdrSSqWFqmoFBipGhWUqSuUViiq5xYpJ5opGBoWmSWUqahbGpUixQfUllQapfYm4qRE9AYklGWmZeSmZeup57UWaKO8hopdhaAFBLAQItABQAAAgIAAAQIewbAn7XawIAACIFAAALACQAAAAAAAAAAAAAAAAAAABncmFwaDAuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLAQItABQAAAgIAAAQIexCRRbzbQAAAHgAAAAJACQAAAAAAAAAAAAAALgCAABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwUGAAAAAAIAAgC4AAAAcAMAAAAA
+    dataString: UEsDBBQAAAgIAAAQIeyZtiGAawIAACIFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF1VE1z2jAQ/SuMzk3GdjCQ3logpIckTGgnF1+EtcYaZMmjjwDJ8N+7km3s0OkJ8Xbfat/blT8Jl6aG3Cq90pw9KQbk+4j4M/k26oOPcKQ7JTf8A7qcN85s6ZNoyHmllivEY08zqgKref5D7oRPjhB0khdKV0u2g7ky1iBcUGEAQ1pZz5YIfY7IEX9u7j3lhKdk6k8feLqPRmc85iAt6D51PLmdJdPkfpq0jOg2TWZpOp2ks5bZEJ3MBa1qYF5Fz0+i7qr4LuRJFNimeDG5EoKbtjtiT3VQ/0pPXjvjFJWGdnxuCXxXWl90SHwpCgO2tUHT04JrNKypSH6qxsWKmn3T1DsVzt8xGYd2mppP/4Rv4hAutKoeu2vjoMWWPN9jgzk1duDyEF587dvJAxV7uhXwVoJ8ViutnGQYtNp5qjOQLPq/F2XzEvJ9jzetXoGu7r3unO5G6jWcg/jjXPBqG6Y3boCNUMHqsAmgcSi/sOGwJ6Ytgajv4o+B33Q3XKg28MC1sRhqVUrf3lY57VPJMnjm1Tg7V1qCHlaoQVJhT2usY69HeBX7P+uB+rfT3t7GuidxRQlwnx9FV6G1OlymZUp1eAJTvjgruITeah94RqPmSspmw4aSOtrG6YLmA9rOcfZ1t0gaQxFFLIknbDudUXZzR7dTmkRxup2wYnaXkrB8XKJOKtZNo609ODbZF5e4aN0nZbTStA7bzjQ9rPhHpUyfyWWhNrkGkC9NhUvjoPESfJFsyTgatAFruQwDJ58ZESrfA8suhbKgdHm0mmZ9lYzU/F1Zj2RkHr4hGfHwZZnXGt45HPzlXbEzOf8FUEsDBBQAAAgIAAAQIexCRRbzbQAAAHgAAAAJACQAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0Bq1YqSy0qzszPU7JSMNEz0jM011FQSi9KLMgoBooYgjilmSkgdrSSqWFqmoFBipGhWUqSuUViiq5xYpJ5opGBoWmSWUqahbGpUixQfUllQapfYm4qRE9AYklGWmZeSmZeup57UWaKO8hopdhaAFBLAQItABQAAAgIAAAQIeyZtiGAawIAACIFAAALACQAAAAAAAAAAAAAAAAAAABncmFwaDAuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLAQItABQAAAgIAAAQIexCRRbzbQAAAHgAAAAJACQAAAAAAAAAAAAAALgCAABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwUGAAAAAAIAAgC4AAAAcAMAAAAA
     upgradeData: 
     file_cachedStartup: {fileID: 0}
     data_cachedStartup: 
@@ -28399,4 +28331,3 @@ SceneRoots:
   - {fileID: 905556846}
   - {fileID: 2059008866}
   - {fileID: 1401195443}
-  - {fileID: 587797589}
