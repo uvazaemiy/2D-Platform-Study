@@ -1,8 +1,12 @@
+using System;
 using System.Collections;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Coin : MonoBehaviour
 {
+    public static event Action<int> OnCoinCollected;
+    
     [SerializeField] private float jumpForceMin = 4f;
     [SerializeField] private float jumpForceMax = 7f;
     [SerializeField] private float sideForce = 2f;
@@ -29,7 +33,10 @@ public class Coin : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (isCollactable && other.gameObject.CompareTag("Player"))
+        {
+            OnCoinCollected?.Invoke(coinValue);
             Destroy(gameObject);
+        }
     }
 
     private IEnumerator ChangeCollatable()
