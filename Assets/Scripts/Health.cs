@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
+    [SerializeField] private bool isPlayer = false;
     [SerializeField] private int maxHealth = 5;
     [SerializeField] private int _currentHealth;
 
@@ -13,6 +14,12 @@ public class Health : MonoBehaviour
 
     private void Start()
     {
+        if (isPlayer)
+        {
+            maxHealth = PlayerPrefs.GetInt("MaxHealth", maxHealth);
+            PlayerPrefs.SetInt("MaxHealth", maxHealth);
+        }
+        
         _currentHealth = maxHealth;
     }
 

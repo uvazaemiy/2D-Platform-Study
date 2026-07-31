@@ -29,7 +29,7 @@ public class UICoinCounter : MonoBehaviour
         PlayerPrefs.Save();
     }
 
-    private void AddCoin(int value)
+    public void AddCoin(int value)
     {
         _totalCoins += value;
         if (_totalCoins >= _highScore)
@@ -38,7 +38,7 @@ public class UICoinCounter : MonoBehaviour
             PlayerPrefs.SetInt("HighScore",  _highScore);
         }
             
-        //PlayerPrefs.SetInt("Coins", _totalCoins);
+        PlayerPrefs.SetInt("Coins", _totalCoins);
         PlayerPrefs.Save();
         
         ApplyText();
