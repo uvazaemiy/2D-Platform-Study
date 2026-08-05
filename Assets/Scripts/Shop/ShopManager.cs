@@ -5,12 +5,17 @@ public class ShopManager : MonoBehaviour
 {
     [SerializeField] private UICoinCounter coinCounter;
     [Space]
+    [SerializeField] Health playerHealth;
     [SerializeField] private int healthPrice = 10;
 
     private int _currentCoins;
 
-
     
+
+    private void Start()
+    {
+        healthPrice = PlayerPrefs.GetInt("HealthPrice", healthPrice);
+    }
 
     public void BuyHealthUpgrade()
     {
@@ -20,12 +25,14 @@ public class ShopManager : MonoBehaviour
         {
             _currentCoins -= healthPrice;
             
-            int currentMaxHealth = PlayerPrefs.GetInt("MaxHealth") + 1;
+            int currentMaxHealth = playerHealth.maxHealth + 1;
             PlayerPrefs.SetInt("MaxHealth", currentMaxHealth);
             coinCounter.AddCoin(-healthPrice);
+
+            healthPrice *= 2;
+            PlayerPrefs.SetInt("HealthPrice", healthPrice);
             
             PlayerPrefs.Save();
-            
             
             Debug.Log("Покупка успішна! Здоров'я збільшено.");
         }
