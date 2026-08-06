@@ -29,14 +29,14 @@ public class PlayerHealthSystem : Health
         foreach (GameObject heart in allHearts)
             heart.SetActive(false);
 
-        for (int i = 0; i < maxLifes - 1; i++)
+        for (int i = 0; i < maxLifes; i++)
             allHearts[i].SetActive(true);
     }
 
     private void ReduceLife()
     {
         maxLifes--;
-        allHearts[maxLifes - 1].SetActive(false);
+        allHearts[maxLifes].SetActive(false);
         PlayerPrefs.SetInt("MaxLifes", maxLifes);
     }
     

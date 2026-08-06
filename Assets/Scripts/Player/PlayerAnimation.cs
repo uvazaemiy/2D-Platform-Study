@@ -18,6 +18,8 @@ public class PlayerAnimation : MonoBehaviour
 
     private void Update()
     {
+        if (!_health.IsAlive()) return;
+        
         if (Input.GetMouseButtonDown(0))
         {
             _animator.SetTrigger("Attack");
