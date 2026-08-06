@@ -1,11 +1,17 @@
+using System.Collections;
 using UnityEngine;
 
 public class PlayerAttackInput : MonoBehaviour
 {
     [SerializeField] private int damage = 1;
+    [SerializeField] private float attackDelay;
 
+    private IAttackInteractable target;
+    
     private AttackTargetFinder finder;
     private Health _health;
+    
+    
 
     private void Start()
     {
@@ -17,16 +23,18 @@ public class PlayerAttackInput : MonoBehaviour
     {
         if (!_health.IsAlive()) return;
         
+        target = finder.FindTarget();
+        
         if (Input.GetMouseButtonDown(0))
         {
-            TryAttack();
+            StartCoroutine(TryAttack());
         }
     }
 
-    private void TryAttack()
+    private IEnumerator TryAttack()
     {
-        IAttackInteractable target = finder.FindTarget();
-
+        yield return new WaitForSeconds(attackDelay);
+        
         if (target != null)
         {
             target.Interact(damage);

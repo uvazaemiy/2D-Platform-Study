@@ -59,6 +59,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAutoAttack
   damage: 1
   attackCooldown: 1
+  attackDelay: 0.7
 --- !u!114 &5061220013164057214
 MonoBehaviour:
   m_ObjectHideFlags: 0

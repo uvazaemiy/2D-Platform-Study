@@ -5,7 +5,6 @@ public class ShopManager : MonoBehaviour
 {
     [SerializeField] private UICoinCounter coinCounter;
     [Space]
-    [SerializeField] Health playerHealth;
     [SerializeField] private int healthPrice = 10;
 
     private int _currentCoins;
@@ -24,8 +23,8 @@ public class ShopManager : MonoBehaviour
         if (_currentCoins >= healthPrice)
         {
             _currentCoins -= healthPrice;
-            
-            int currentMaxHealth = playerHealth.maxHealth + 1;
+
+            int currentMaxHealth = PlayerPrefs.GetInt("MaxHealth") + 1;
             PlayerPrefs.SetInt("MaxHealth", currentMaxHealth);
             coinCounter.AddCoin(-healthPrice);
 

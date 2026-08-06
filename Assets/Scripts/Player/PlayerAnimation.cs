@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class PlayerAnimation : MonoBehaviour
@@ -13,6 +14,14 @@ public class PlayerAnimation : MonoBehaviour
         _health = GetComponent<Health>();
         _playerController = GetComponent<PlayerController>();
         _changeCollidersOnDie = GetComponent<ChangeCollidersOnDie>();
+    }
+
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            _animator.SetTrigger("Attack");
+        }
     }
 
     private void OnEnable()

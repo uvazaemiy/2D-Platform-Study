@@ -3,9 +3,8 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    [SerializeField] private bool isPlayer = false;
-    public int maxHealth = 5;
-    [SerializeField] private int _currentHealth;
+    [SerializeField] protected int maxHealth = 5;
+    [SerializeField] protected int _currentHealth;
 
     public Action OnDamaged;
     public Action OnKilled;
@@ -14,11 +13,6 @@ public class Health : MonoBehaviour
 
     private void Start()
     {
-        if (isPlayer)
-        {
-            maxHealth = PlayerPrefs.GetInt("MaxHealth", maxHealth);
-        }
-        
         _currentHealth = maxHealth;
     }
 

@@ -11,7 +11,7 @@ public class UICoinCounter : MonoBehaviour
 
     private void Start()
     {
-        //_totalCoins = PlayerPrefs.GetInt("Coins", 0);
+        _totalCoins = PlayerPrefs.GetInt("Coins", 0);
         _highScore = PlayerPrefs.GetInt("HighScore", 0);
         
         ApplyText();
