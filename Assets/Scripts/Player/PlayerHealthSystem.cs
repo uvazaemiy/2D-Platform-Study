@@ -5,6 +5,7 @@ public class PlayerHealthSystem : Health
 {
     [SerializeField] private int maxLifes;
     [SerializeField] private GameObject[] allHearts;
+    [SerializeField] private GameObject LosePanel;
 
     private void OnEnable()
     {
@@ -16,7 +17,7 @@ public class PlayerHealthSystem : Health
         OnKilled -= ReduceLife;
     }
 
-    private void Start()
+    private void Awake()
     {
         maxHealth = PlayerPrefs.GetInt("MaxHealth", maxHealth);
         PlayerPrefs.SetInt("MaxHealth", maxHealth);
@@ -38,6 +39,8 @@ public class PlayerHealthSystem : Health
         maxLifes--;
         allHearts[maxLifes].SetActive(false);
         PlayerPrefs.SetInt("MaxLifes", maxLifes);
+        
+        LosePanel.SetActive(true);
     }
     
     public void IncreaseLife()

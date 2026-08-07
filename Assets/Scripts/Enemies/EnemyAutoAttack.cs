@@ -41,7 +41,7 @@ public class EnemyAutoAttack : MonoBehaviour
         
         yield return new WaitForSeconds(attackDelay);
         
-        if (target != null)
+        if (target != null && _health.IsAlive())
         {
             target.Interact(damage);
         }

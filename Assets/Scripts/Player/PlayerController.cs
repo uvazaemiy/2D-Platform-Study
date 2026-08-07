@@ -6,13 +6,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private CameraFollow cameraFollow;
     [Space]
     [SerializeField] private float moveSpeed = 5f;
-    [SerializeField] private float moveForce = 5f;
     [SerializeField] private float jumpForce = 12f;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private bool isGrounded;
 
-    public Action OnMove;
+    [HideInInspector] public bool allowMoving = true;
     
     private float groundCheckRadius = 0.2f;
     
@@ -23,18 +22,20 @@ public class PlayerController : MonoBehaviour
 
     
     
-    
-    private void Start()
+    private void Awake()
     {
         sr = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         health = GetComponent<Health>();
+        
+        moveSpeed = PlayerPrefs.GetFloat("MaxSpeed", moveSpeed);
+        PlayerPrefs.SetFloat("MaxSpeed", moveSpeed);
     }
 
     private void Update()
     {
-        if (!health.IsAlive()) return;
+        if (!health.IsAlive() || !allowMoving) return;
         
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
 
@@ -48,7 +49,7 @@ public class PlayerController : MonoBehaviour
                 new Vector3(cameraFollow.offset.x * -1, cameraFollow.offset.y, cameraFollow.offset.z) 
                 : cameraFollow.offset;
             
-            OnMove?.Invoke();
+            anim.SetBool("Move", true);
         }
         else if (horizontal < 0)
         {
@@ -58,7 +59,7 @@ public class PlayerController : MonoBehaviour
                 new Vector3(cameraFollow.offset.x * -1, cameraFollow.offset.y, cameraFollow.offset.z) 
                 : cameraFollow.offset;
             
-            OnMove?.Invoke();
+            anim.SetBool("Move", true);
         }
         else
             anim.SetBool("Move", false);
